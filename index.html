@@ -44,7 +44,21 @@
 <div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.trigger<span class="pl-pds">"</span></span>).<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">"</span>longpress<span class="pl-pds">"</span></span>, <span class="pl-k">function</span>(){
     <span class="pl-c">// Your actions here</span>
 });</pre></div>
-<p><a href="demo/" title="Lonpress Demo">Demo</a></p>
+
+<p><a href="http://gunnyarts.github.io/longpress/demo/">Demo</a></p>
+
+<h3>
+<a id="prevent-mobile-link-context-popup" class="anchor" href="#prevent-mobile-link-context-popup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prevent mobile link context popup</h3>
+
+<p>You can call the function <code>preventContext</code> on the links you are longpressing</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>.trigger<span class="pl-pds">'</span></span>).<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>load<span class="pl-pds">'</span></span>, preventContext);
+</pre></div>
+
+<p>This will prevent the context popup from appearing on the page where this function is called. This should only be used when necessary, as it will prevent your users from opening links in new tabs, save images, etc. on mobile devices.</p>
+
+<p>This will only prevent the link context popup from appearing; the user can still highlight and copy normal text on the page.</p>
+
 <h2>
 <a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works</h2>
 
@@ -53,16 +67,14 @@ When the element is clicked a <code>timeout</code> is started. When the <code>ti
 
 <p>If the press or click is stopped before the <code>timeout</code> the <code>longpress</code> event will not be triggered.</p>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-c1">document</span>).<span class="pl-en">ready</span>(<span class="pl-k">function</span>(){
-    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>body<span class="pl-pds">'</span></span>).<span class="pl-c1">find</span>(<span class="pl-s"><span class="pl-pds">'</span>*<span class="pl-pds">'</span></span>).<span class="pl-en">each</span>(<span class="pl-k">function</span>(){
-        <span class="pl-k">var</span> self <span class="pl-k">=</span> <span class="pl-en">$</span>(<span class="pl-v">this</span>);
-        <span class="pl-smi">self</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>mousedown<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(){
-            <span class="pl-k">var</span> timeout <span class="pl-k">=</span> <span class="pl-c1">setTimeout</span>(<span class="pl-k">function</span>(){
-                <span class="pl-smi">self</span>.<span class="pl-en">trigger</span>(<span class="pl-s"><span class="pl-pds">'</span>longpress<span class="pl-pds">'</span></span>);
-            }, <span class="pl-c1">500</span>)
-            <span class="pl-smi">self</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>mouseup<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(){
-                <span class="pl-c1">clearTimeout</span>(timeout);
-            });
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>body<span class="pl-pds">'</span></span>).<span class="pl-c1">find</span>(<span class="pl-s"><span class="pl-pds">'</span>*<span class="pl-pds">'</span></span>).<span class="pl-en">each</span>(<span class="pl-k">function</span>(){
+    <span class="pl-k">var</span> self <span class="pl-k">=</span> <span class="pl-en">$</span>(<span class="pl-v">this</span>);
+    <span class="pl-smi">self</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>mousedown<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(){
+        <span class="pl-k">var</span> timeout <span class="pl-k">=</span> <span class="pl-c1">setTimeout</span>(<span class="pl-k">function</span>(){
+            <span class="pl-smi">self</span>.<span class="pl-en">trigger</span>(<span class="pl-s"><span class="pl-pds">'</span>longpress<span class="pl-pds">'</span></span>);
+        }, <span class="pl-c1">500</span>)
+        <span class="pl-smi">self</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>mouseup<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(){
+            <span class="pl-c1">clearTimeout</span>(timeout);
         });
     });
 });</pre></div>
