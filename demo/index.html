@@ -3,22 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <title>Longpress jQuery Plugin</title>
-	<link href="css/style.css" type="text/css" rel="stylesheet">
+	<link href="https://raw.githubusercontent.com/Gunnyarts/longpress/master/css/style.css" type="text/css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="js/jquery.longpress.js"></script>
+	<script src="https://raw.githubusercontent.com/Gunnyarts/longpress/master/js/jquery.longpress.js"></script>
 </head>
 <body>
 
-	<p>Click the trigger box below:</p>
-	<div class="trigger"></div>
+
 	
-	<p class="action"></p>
-	
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Longpress : An event listener for longpressing elements">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Longpress</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Gunnyarts/longpress">View on GitHub</a>
+
+          <h1 id="project_title">Longpress</h1>
+          <h2 id="project_tagline">An event listener for longpressing elements</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Gunnyarts/longpress/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Gunnyarts/longpress/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+				<p>Click the trigger box below:</p>
+				<div class="trigger"></div>
+
+				<p class="action"></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Longpress maintained by <a href="https://github.com/Gunnyarts">Gunnyarts</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
 	<script>
 		$('.trigger').on('longpress', function(){
 				$('.action').text('You just longpressed');
 		}).on('mousedown', preventContext);
 	</script>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-71809928-1");
+		pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
 
-</body>
+
+  </body>
 </html>
