@@ -34,10 +34,8 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-				<p>Click the trigger box below:</p>
+				<p>Longpress the box below. It will toggle between two colors when longpressed.</p>
 				<div class="trigger"></div>
-
-				<p class="action"></p>
       </section>
     </div>
 
@@ -50,7 +48,7 @@
     </div>
 	<script>
 		$('.trigger').on('longpress', function(){
-				$('.action').text('You just longpressed');
+				$(this).toggleClass('active');
 		}).on('mousedown', preventContext);
 	</script>
 	<script type="text/javascript">

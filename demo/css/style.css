@@ -2,5 +2,9 @@
 	display:block;
 	width:150px;
 	height:100px;
+	cursor:pointer;
 	background-color:#cb5425;
+}
+.trigger.active {
+	background-color:#54cb25;
 }
