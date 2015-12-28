@@ -1,5 +1,5 @@
 # longpress
-An event listener for longpressing elements
+An event listener for longpressing elements on desktop and mobile
 ## How to use
 Add the plugin in the header.
 ```html5
