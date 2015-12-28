@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Longpress jQuery Plugin</title>
+	<link href="css/style.css" type="text/css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="js/jquery.longpress.js"></script>
 </head>
@@ -15,7 +16,7 @@
 	
 	<script>
 		$('.trigger').on('longpress', function(){
-				$('.action').text($(this).text());
+				$('.action').text('You just longpressed');
 		}).on('mousedown', preventContext);
 	</script>
 
