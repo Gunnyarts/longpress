@@ -12,11 +12,10 @@ $(document).ready(function(){
 		self.on('mousedown', function(){
 			var timeout = setTimeout(function(){
 				self.trigger('longpress');
-			}, 200)
+			}, 500)
 			self.on('mouseup', function(){
 				clearTimeout(timeout);
 			});
 		});
 	});
-
 });
