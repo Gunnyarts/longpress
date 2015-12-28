@@ -11,6 +11,9 @@ $(".trigger").on("longpress", function(){
 	// Your actions here
 });
 ```
+[Demo](http://gunnyarts.github.io/longpress/demo/)
+
+
 ## How it works
 The plugin finds all elements in `body`.
 When the element is clicked a `timeout` is started. When the `timeout` ends the `longpress` event will be triggered on the element.
