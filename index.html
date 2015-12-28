@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Longpress jQuery Plugin</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js/jquery.longpress.js"></script>
+</head>
+<body>
+
+	<p>Click the trigger box below:</p>
+	<div class="trigger"></div>
+	
+	<p class="action"></p>
+	
+	<script>
+		$('.trigger').on('longpress', function(){
+				$('.action').text($(this).text());
+		}).on('mousedown', preventContext);
+	</script>
+
+</body>
+</html>
