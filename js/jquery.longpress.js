@@ -1,5 +1,4 @@
 function preventContext(){
-	console.log('preventing');
 	window.oncontextmenu = function(event) {
 			 event.preventDefault();
 			 event.stopPropagation();
